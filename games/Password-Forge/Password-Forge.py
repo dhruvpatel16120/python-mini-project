@@ -230,11 +230,10 @@ while lives > 0:
 
     passed_visible = False
 
-    for rule in passed_rules[:unlocked_rules]:
-
-        print(f"✔️ {rule}")
-
-        passed_visible = True
+    for rule in passed_rules:
+        if rules.index(rule) < unlocked_rules:
+            print(f"✔️ {rule}")
+            passed_visible = True
 
     if not passed_visible:
         print("None")
@@ -243,11 +242,10 @@ while lives > 0:
 
     failed_visible = False
 
-    for rule in failed_rules[:unlocked_rules]:
-
-        print(f"✖️ {rule}")
-
-        failed_visible = True
+    for rule in failed_rules:
+        if rules.index(rule) < unlocked_rules:
+            print(f"✖️ {rule}")
+            failed_visible = True
 
     if not failed_visible:
         print("None")
